@@ -1,11 +1,22 @@
-
+[    
     {
-        "id":1,
+        "id": 1,
         "name": "Men's Nike Downshifter 12",
         "price": "$64.99",
-        "oldPrice": "null",
+        "oldPrice": null,
         "description": "Bu ürün, Nike'ın Move to Zero yolculuğunun bir parçası olarak sürdürülebilir malzemelerden yapılmıştır. ",
         "starRate": 4.7,
         "stock": "56",
-        "imgSource": ""
+        "imgSource": "./assets/products/pro_1.webp"
+    },
+    {
+        "id": 2,
+        "name": "Men's Nike Downshifter 13",
+        "price": "$53.99",
+        "oldPrice": null,
+        "description": "Bu ürün, Niksdfghjklşçasfghjklşlzer. ",
+        "starRate": 3.7,
+        "stock": "15",
+        "imgSource": "./assets/products/pro_2.webp"
     }
+]
