@@ -314,7 +314,7 @@
 
 .basket_item_info .basket_shoe_remove {
   cursor: pointer;
-  color: gray;
+  color: red;
 }
 
 .basket_item .shoe_count {

@@ -60,4 +60,4 @@ const createShoeItemsHtml = () => {
 
 setTimeout(() => {
   createShoeItemsHtml();
-}, 100);
+}, 50);
