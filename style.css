@@ -132,6 +132,9 @@
   height: 330px;
 }
 
+.shoe_card img {
+  height: 220px;
+}
 .shoe_name {
   font-size: large;
   font-weight: bold;
@@ -192,7 +195,7 @@
   position: absolute;
   left: 0;
   width: 350px;
-  height: 600px;
+  height: 645px;
   background: -webkit-linear-gradient(right, rgba(255, 0, 0, 0), rgb(117, 112, 112));
   float: left;
   z-index: -1;
