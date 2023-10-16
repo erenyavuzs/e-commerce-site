@@ -189,7 +189,7 @@
       "id": 19,
       "name": "Salvatore Ferragamo Vara",
       "price": "$299.99",
-      "oldPrice": "$329.99",
+      "oldPrice": null,
       "description": "Salvatore Ferragamo Vara, an elegant and iconic choice for women.",
       "starRate": 4.9,
       "stock": "11",
