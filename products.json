@@ -9,7 +9,8 @@
     "starRate": 4.7,
     "stock": "15",
     "imgSource":"./assets/products/9.jpeg",
-    "type":"Boot"
+    "type":"Boot",
+    "reviewCount": 27
   },
   {
     "id": 1,
@@ -20,7 +21,8 @@
     "starRate": 4.7,
     "stock": "56",
     "imgSource":"./assets/products/1.webp",
-    "type":"Sport"
+    "type":"Sport",
+    "reviewCount": 46
   },
   {
     "id": 15,
@@ -31,7 +33,8 @@
     "starRate": 4.6,
     "stock": "18",
     "imgSource":"./assets/products/15.jpeg",
-    "type":"Sneaker"
+    "type":"Sneaker",
+    "reviewCount": 14
   },
   {
     "id": 16,
@@ -42,7 +45,8 @@
     "starRate": 4.7,
     "stock": "32",
     "imgSource":"./assets/products/16.jpeg",
-    "type":"Classic"
+    "type":"Classic",
+    "reviewCount": 26
   },
   {
     "id": 8,
@@ -53,7 +57,8 @@
     "starRate": 4.5,
     "stock": "22",
     "imgSource":"./assets/products/8.jpeg",
-    "type":"Boot"
+    "type":"Boot",
+    "reviewCount": 37
   },
   {
     "id": 12,
@@ -64,7 +69,8 @@
     "starRate": 4.7,
     "stock": "35",
     "imgSource":"./assets/products/12.jpeg",
-    "type":"Sneaker"
+    "type":"Sneaker",
+    "reviewCount": 18
   },
   {
     "id": 14,
@@ -75,7 +81,8 @@
     "starRate": 4.5,
     "stock": "40",
     "imgSource":"./assets/products/14.webp",
-    "type":"Sneaker"
+    "type":"Sneaker",
+    "reviewCount": 38
   },
   {
     "id": 10,
@@ -86,7 +93,8 @@
     "starRate": 4.3,
     "stock": "12",
     "imgSource":"./assets/products/10.jpeg",
-    "type":"Boot"
+    "type":"Boot",
+    "reviewCount": 43
   },
   {
     "id": 4,
@@ -97,7 +105,8 @@
     "starRate": 4.5,
     "stock": "30",
     "imgSource":"./assets/products/4.jpeg",
-    "type":"Sport"
+    "type":"Sport",
+    "reviewCount": 79
   },
   {
     "id": 3,
@@ -108,7 +117,8 @@
     "starRate": 4.9,
     "stock": "42",
     "imgSource":"./assets/products/3.jpeg",
-    "type":"Sport"
+    "type":"Sport",
+    "reviewCount": 58
   },
   {
     "id": 19,
@@ -119,7 +129,8 @@
     "starRate": 4.9,
     "stock": "11",
     "imgSource":"./assets/products/19.webp",
-    "type":"Classic"
+    "type":"Classic",
+    "reviewCount": 11
   },
   {
     "id": 7,
@@ -130,7 +141,8 @@
     "starRate": 4.6,
     "stock": "18",
     "imgSource":"./assets/products/7.jpeg",
-    "type":"Boot"
+    "type":"Boot",
+    "reviewCount": 23
   },
   {
     "id": 6,
@@ -141,7 +153,8 @@
     "starRate": 4.8,
     "stock": "20",
     "imgSource":"./assets/products/6.webp",
-    "type":"Boot"
+    "type":"Boot",
+    "reviewCount": 87
   },
   {
     "id": 2,
@@ -152,7 +165,8 @@
     "starRate": 3.9,
     "stock": "15",
     "imgSource":"./assets/products/2.webp",
-    "type":"Sport"
+    "type":"Sport",
+    "reviewCount": 64
   },
   {
     "id": 5,
@@ -163,7 +177,8 @@
     "starRate": 4.6,
     "stock": "25",
     "imgSource":"./assets/products/5.webp",
-    "type":"Sport"
+    "type":"Sport",
+    "reviewCount": 50
   },
   {
     "id": 18,
@@ -174,7 +189,8 @@
     "starRate": 4.8,
     "stock": "15",
     "imgSource":"./assets/products/18.jpeg",
-    "type":"Classic"
+    "type":"Classic",
+    "reviewCount": 19
   },
   {
     "id": 13,
@@ -185,7 +201,8 @@
     "starRate": 4.6,
     "stock": "24",
     "imgSource":"./assets/products/13.webp",
-    "type":"Sneaker"
+    "type":"Sneaker",
+    "reviewCount": 63
   },
   {
     "id": 17,
@@ -196,7 +213,8 @@
     "starRate": 4.4,
     "stock": "22",
     "imgSource":"./assets/products/17.jpeg",
-    "type":"Classic"
+    "type":"Classic",
+    "reviewCount": 59
   },
   {
     "id": 20,
@@ -207,7 +225,8 @@
     "starRate": 4.9,
     "stock": "9",
     "imgSource":"./assets/products/20.jpeg",
-    "type":"Classic"
+    "type":"Classic",
+    "reviewCount": 7
   },
   {
     "id": 11,
@@ -218,6 +237,7 @@
     "starRate": 4.4,
     "stock": "27",
     "imgSource":"./assets/products/11.webp",
-    "type":"Sneaker"
+    "type":"Sneaker",
+    "reviewCount": 88
   }
 ]

@@ -115,6 +115,10 @@
   font-weight: bold;
 }
 
+.basket_count:empty{
+  display: none;
+}
+
 .slider {
   width: 70%;
   height: 70%;

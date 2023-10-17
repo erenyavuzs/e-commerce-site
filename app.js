@@ -1,4 +1,5 @@
 let shoeList = [];
+let basketList = [];
 
 const toggleModal = () => {
     const basketModal = document.querySelector(".basket_modal");
@@ -40,7 +41,7 @@ const createShoeItemsHtml = (shoes = shoeList) => {
                         <div>
                             <span class="shoe_name">${shoe.name}</span>
                             <br>
-                            <span class="shoe_review-text">23 reviews</span>
+                            <span class="shoe_reviewCount">${shoe.reviewCount} reviews</span>
                             <span class="shoe_star-rate">
                                 ${createShoeStars(shoe.starRate)}
                             </span>
@@ -54,7 +55,9 @@ const createShoeItemsHtml = (shoes = shoeList) => {
             shoe.oldPrice ?
                 `<span class="old_price">${shoe.oldPrice}</span>` : ""
             }
-                            <button class="add_button">ADD BASKET</button>
+                            <button class="add_button" onclick="addShoeToBasket(${
+                                shoe.id
+                            })">ADD BASKET</button>
                         </div>
                     </div>
                 </div>
@@ -105,6 +108,45 @@ const filterShoes = (filterEl) => {
 
     createShoeItemsHtml(filteredShoes);
 };
+const listBasketItems = () => {
+    const basketListEl = document.querySelector(".basket_list");
+    let basketListHtml = "";
+    basketList.forEach(item => {
+        basketListHtml += `<li class="basket_item">
+        <img src="${item.product.imgSource}" width="100" height="100"/>
+        <div class="basket_item_info">
+          <h3 class="basket_shoe_name">${item.product.name}</h3>
+          <span class="basket_shoe_price">${item.product.price}</span><br>
+          <span class="basket_shoe_remove">remove</span>
+        </div>
+        <div class="shoe_count">
+          <span class="decrease">-</span>
+          <span class="">${item.quantity}</span>
+          <span class="increase">+</span>
+        </div>
+      </li>`
+    })
+    basketListEl.innerHTML = basketListHtml;
+};
+
+const addShoeToBasket = (shoeId) => {
+  let findedShoe = shoeList.find((shoe) => shoe.id == shoeId);
+  if (findedShoe) {
+    const basketAlreadyIndex = basketList.findIndex(
+      (basket) => basket.product.id == shoeId
+    );
+    if (basketAlreadyIndex == -1) {
+      let addedItem = { quantity: 1, product: findedShoe };
+      basketList.push(addedItem);
+    } else {
+      basketList[basketAlreadyIndex].quantity += 1;
+    }
+    listBasketItems();
+  }
+};
+
+
+
 
 setTimeout(() => {
     createShoeItemsHtml();
