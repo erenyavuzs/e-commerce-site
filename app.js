@@ -23,13 +23,15 @@ const createShoeStars = (starRate) => {
     for (let i = 1; i <= 5; i++) {
         if (Math.round(starRate) >= i) starRateHtml += `<i class="bi bi-star-fill"></i>`;
     }
-
     return starRateHtml;
 };
 
 const createShoeItemsHtml = (shoes = shoeList) => {
     const shoeListEl = document.querySelector(".shoe_list");
+    const basketCountEl = document.querySelector(".basket_count").innerHTML =
+        basketList.length > 0 ? basketList.length : null;
     let shoeListHtml = "";
+
     shoes.forEach((shoe, index) => {
         shoeListHtml += `<div class="col-5 ${index % 2 === 0 ? "offset-2" : ""}">
             <div class="row shoe_card">
@@ -52,12 +54,10 @@ const createShoeItemsHtml = (shoes = shoeList) => {
                         <div>
                             <span class="new_price">${shoe.price}</span>
                             ${
-            shoe.oldPrice ?
-                `<span class="old_price">${shoe.oldPrice}</span>` : ""
-            }
-                            <button class="add_button" onclick="addShoeToBasket(${
-                                shoe.id
-                            })">ADD BASKET</button>
+                                shoe.oldPrice ?
+                                `<span class="old_price">${shoe.oldPrice}</span>` : ""
+                            }
+                            <button class="add_button" onclick="addShoeToBasket(${shoe.id})">ADD BASKET</button>
                         </div>
                     </div>
                 </div>
@@ -80,15 +80,14 @@ const createShoeTypesHtml = () => {
     const filterEl = document.querySelector(".filter");
     let filterHtml = "";
     let filterTypes = ["ALL"];
+
     shoeList.forEach(shoe => {
         if (filterTypes.indexOf(shoe.type) === -1)
             filterTypes.push(shoe.type);
     });
 
     filterTypes.forEach((type, index) => {
-        filterHtml += `<li class="${
-            index === 0 ? "active" : ""
-        }" onclick="filterShoes(this)" data-type="${type}">${Shoe_Types[type] || type}</li>`;
+        filterHtml += `<li class="${index === 0 ? "active" : ""}" onclick="filterShoes(this)" data-type="${type}">${Shoe_Types[type] || type}</li>`;
     });
 
     filterEl.innerHTML = filterHtml;
@@ -108,25 +107,35 @@ const filterShoes = (filterEl) => {
 
     createShoeItemsHtml(filteredShoes);
 };
+
 const listBasketItems = () => {
     const basketListEl = document.querySelector(".basket_list");
+    const basketCountEl = document.querySelector(".basket_count");
+    basketCountEl.innerHTML = basketList.length > 0 ? basketList.length : null;
+    const totalTextEl = document.querySelector(".total_text");
+    
     let basketListHtml = "";
+    let totalText = 0;
     basketList.forEach(item => {
-        basketListHtml += `<li class="basket_item">
+      totalText += parseFloat(item.product.price.replace("$", "")) * item.quantity;
+      basketListHtml += `<li class="basket_item">
         <img src="${item.product.imgSource}" width="100" height="100"/>
         <div class="basket_item_info">
           <h3 class="basket_shoe_name">${item.product.name}</h3>
           <span class="basket_shoe_price">${item.product.price}</span><br>
-          <span class="basket_shoe_remove">remove</span>
+          <span class="basket_shoe_remove" onclick="removeFromBasket(${item.product.id})">remove</span>
         </div>
         <div class="shoe_count">
-          <span class="decrease">-</span>
+          <span class="decrease" onclick="decreaseQuantity(${item.product.id})">-</span>
           <span class="">${item.quantity}</span>
-          <span class="increase">+</span>
+          <span class="increase" onclick="increaseQuantity(${item.product.id})">+</span>
         </div>
-      </li>`
-    })
+      </li>`;
+    });
+
     basketListEl.innerHTML = basketListHtml;
+    totalTextEl.innerHTML = 
+      totalText > 0 ? "Total : " + totalText.toFixed(2) + "$" : null;
 };
 
 const addShoeToBasket = (shoeId) => {
@@ -145,8 +154,29 @@ const addShoeToBasket = (shoeId) => {
   }
 };
 
+const removeFromBasket = (shoeId) => {
+    const basketItemIndex = basketList.findIndex((item) => item.product.id === shoeId);
+    if (basketItemIndex !== -1) {
+        basketList.splice(basketItemIndex, 1);
+        listBasketItems();
+    }
+};
 
+const decreaseQuantity = (shoeId) => {
+    const basketItem = basketList.find((item) => item.product.id === shoeId);
+    if (basketItem.quantity > 1) {
+        basketItem.quantity -= 1;
+        listBasketItems();
+    }
+};
 
+const increaseQuantity = (shoeId) => {
+    const basketItem = basketList.find((item) => item.product.id === shoeId);
+    if (basketItem.quantity < parseInt(basketItem.product.stock)) {
+        basketItem.quantity += 1;
+        listBasketItems();
+    }
+};
 
 setTimeout(() => {
     createShoeItemsHtml();

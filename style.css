@@ -22,6 +22,7 @@
   
   color: grey;
   font-weight: bold;
+  justify-content: space-between;
 }
 
 
@@ -38,7 +39,6 @@
   transition: all 320ms ease-in-out;
   cursor: pointer;
   font-size: 25px;
-  
 }
 
 .b_menu {
